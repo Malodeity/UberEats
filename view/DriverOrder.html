@@ -1,0 +1,51 @@
+﻿<div class="row" ng-controller="DriverOrdersController">
+    <h2 class="text-center text-primary">Orders To Be Delivered</h2>
+  
+    <div class="col-md-3 col-md-offset-1">
+        <h3 class="text-primary" align="Center">Select Order Address</h3>
+        <hr />
+        <div class="dropdown">
+            <button  class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 300px;" align="Center">
+                {{selectedItems}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 300px;">
+                <li ng-repeat="i in Orders">
+                    <a ng-click="dropboxitemselected(i)"> {{i.AddressOrder}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <form ng-show="isDeleteItemVisible">
+            <div class="form-group">
+                <label for="InputEmail">Total Price</label>
+                <input type="text" ng-model="totalPrice" class="form-control input-lg" placeholder="name" disabled />
+            </div>
+            <div class="form-group">
+                <label for="InputEmail">Delivery Address</label>
+                <input type="text" ng-model="AddressOrder" class="form-control input-lg" placeholder="name" disabled />
+            </div>
+            <div class="form-group">
+                <label for="InputEmail">Customer Email</label>
+                <input type="text" ng-model="email" class="form-control input-lg" placeholder="name" disabled />
+            </div>
+            <div class="form-group">
+                <label for="InputEmail">Customer ID</label>
+                <input type="text" ng-model="Id" class="form-control input-lg" placeholder="name" disabled />
+            </div>
+            <div class="form-group">
+                <label for="DeliveryStatus">Delivery Status</label>
+                <input list="DeliveryStatus" ng-model="DeliveryStatus" name="Delivery Status" class="form-control input-lg" placeholder="Select one option" />
+                <datalist id="DeliveryStatus">
+                    <select name="DeliveryStatus">
+                        <option value="Delivered">Order is Delivered</option>
+                        <option value="Not Delivered">Order Couldn't be Delivered</option>
+                    </select>
+                </datalist>
+            </div>
+            <button ng-click="UpdateStatus()" class="btn btn-primary form-control input-lg">Update Status</button>
+        </form>
+    </div>
+    </div>
+

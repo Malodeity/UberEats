@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CustomerDbModelStoreContainer" CdmEntityContainer="CustomerDbEntities1">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="CustomerDbModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="CustomerDbModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="ResCity" ColumnName="ResCity" />
+          <ScalarProperty Name="ResAddress" ColumnName="ResAddress" />
+          <ScalarProperty Name="ResName" ColumnName="ResName" />
+          <ScalarProperty Name="ResId" ColumnName="ResId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="CustomerDbModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="CustomerDbModel.Picture">
+        <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="picId" ColumnName="picId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetResInfo" FunctionName="CustomerDbModel.Store.GetResInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.GetResInfo_Result">
+          <ScalarProperty Name="ResName" ColumnName="ResName" />
+          <ScalarProperty Name="ResAddress" ColumnName="ResAddress" />
+          <ScalarProperty Name="ResCity" ColumnName="ResCity" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Procedure" FunctionName="CustomerDbModel.Store.Procedure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.Procedure_Result">
+          <ScalarProperty Name="picId" ColumnName="picId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="ResId" ColumnName="ResId" />
+          <ScalarProperty Name="ResName" ColumnName="ResName" />
+          <ScalarProperty Name="ResAddress" ColumnName="ResAddress" />
+          <ScalarProperty Name="ResCity" ColumnName="ResCity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="CustomerDbModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProdResName" ColumnName="ProdResName" />
+          <ScalarProperty Name="ProdPrice" ColumnName="ProdPrice" />
+          <ScalarProperty Name="ProdDesc" ColumnName="ProdDesc" />
+          <ScalarProperty Name="ProdName" ColumnName="ProdName" />
+          <ScalarProperty Name="ProdId" ColumnName="ProdId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdGalleries">
+      <EntityTypeMapping TypeName="CustomerDbModel.ProdGallery">
+        <MappingFragment StoreEntitySet="ProdGallery">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GalProdId" ColumnName="GalProdId" />
+          <ScalarProperty Name="GalleryId" ColumnName="GalleryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderCopies">
+      <EntityTypeMapping TypeName="CustomerDbModel.OrderCopy">
+        <MappingFragment StoreEntitySet="OrderCopy">
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="CustomerDbModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PayCvCode" ColumnName="PayCvCode" />
+          <ScalarProperty Name="PayExpDate" ColumnName="PayExpDate" />
+          <ScalarProperty Name="PayCardNum" ColumnName="PayCardNum" />
+          <ScalarProperty Name="PayCardName" ColumnName="PayCardName" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CustomerDbModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="AddressOrder" ColumnName="AddressOrder" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetProductInfo2" FunctionName="CustomerDbModel.Store.GetProductInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.GetProductInfo2_Result">
+          <ScalarProperty Name="ProdId" ColumnName="ProdId" />
+          <ScalarProperty Name="ProdName" ColumnName="ProdName" />
+          <ScalarProperty Name="ProdDesc" ColumnName="ProdDesc" />
+          <ScalarProperty Name="ProdPrice" ColumnName="ProdPrice" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Procedure22" FunctionName="CustomerDbModel.Store.Procedure2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.Procedure22_Result">
+          <ScalarProperty Name="GalleryId" ColumnName="GalleryId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GalProdId" ColumnName="GalProdId" />
+          <ScalarProperty Name="ProdId" ColumnName="ProdId" />
+          <ScalarProperty Name="ProdName" ColumnName="ProdName" />
+          <ScalarProperty Name="ProdDesc" ColumnName="ProdDesc" />
+          <ScalarProperty Name="ProdPrice" ColumnName="ProdPrice" />
+          <ScalarProperty Name="ProdResName" ColumnName="ProdResName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetOrders" FunctionName="CustomerDbModel.Store.GetOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.GetOrders_Result">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProdName" ColumnName="ProdName" />
+          <ScalarProperty Name="ProdDesc" ColumnName="ProdDesc" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="AddressOrder" ColumnName="AddressOrder" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="CustomerDbModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="DriverCellNum" ColumnName="DriverCellNum" />
+          <ScalarProperty Name="DriverPassword" ColumnName="DriverPassword" />
+          <ScalarProperty Name="DriverEmail" ColumnName="DriverEmail" />
+          <ScalarProperty Name="DriverLName" ColumnName="DriverLName" />
+          <ScalarProperty Name="DriverFname" ColumnName="DriverFname" />
+          <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DriversOrders" FunctionName="CustomerDbModel.Store.DriversOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CustomerDbModel.DriversOrders_Result">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="AddressOrder" ColumnName="AddressOrder" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

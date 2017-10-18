@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+
+
+    <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: whitesmoke;
+            /*background-image: url('searchicon.png');*/
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+            input[type=text]:focus {
+                width: 100%;
+            }
+
+
+        table thead tr th {
+            color: skyblue;
+        }
+
+        span.text-center {
+            display: block;
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        button {
+            font-size: 13px !important;
+        }
+
+            button i {
+                font-size: 15px !important;
+            }
+    </style>
+</head>
+<body ng-controller="GetAllOrdersController">
+
+    <div class="col-lg-12">
+        <h2 align="Center" style="color:skyblue">Restaurant Orders</h2>
+        <input type="text" name="search" placeholder="Search.." ng-model="searchOrders">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product Name</th>
+                    <th>Delivery Address</th>
+                    <th>Delivery Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ord in Orders | filter : searchOrders ">
+
+                    <td>{{ ord.OrderId }}</td>
+                    <td>{{ ord.ProdName }}</td>
+                    <td>{{ ord.AddressOrder }}</td>
+                    <td>{{ ord.DeliveryStatus }}</td>
+             
+                  
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+</body>
+</html>

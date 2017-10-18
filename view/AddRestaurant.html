@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<h2 class="text-center text-dark">Add Restuarant</h2>
+
+<head>
+    <title>Add Restuarant</title>
+    <meta charset="utf-8" />
+
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../services.js"></script>
+    <script src="../Demo.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div ng-controller="ResController">
+                <form>
+                    <div class="form-group">
+                        <label for="inputName">Restaurant Name:</label>
+                        <input type="text" ng-model="ResName" class="form-control input-lg" placeholder="Restaurant Name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Address:</label>
+                        <input type="text" ng-model="ResAddress" class="form-control input-lg" placeholder="Restaurant Address" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">City:</label>
+                        <input type="text" ng-model="ResCity" class="form-control input-lg" placeholder="Restaurant City" required />
+                    </div>
+                    <br />
+                    <div class="input">
+                        <button ng-click="AddRestu()" class="btn btn-primary form-control input-lg">Register</button>
+                    </div>
+                </form>
+            </div>
+            <h2>{{ResName}}</h2>
+        </div>
+    </div>
+</body>

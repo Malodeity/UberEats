@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div class="col-lg-12">
+        <h2 class="text-center text-dark">Cart</h2>
+        <table class="table table-hover" ng-controller="CartController">
+            <thead>
+           
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+
+            <tbody id="ok">
+                <tr ng-repeat="myItem in myItems ">
+                   
+                    <td>{{ myItem.ProdName }}</td>
+                    <td>{{ myItem.ProdPrice | currency : "R" }}</td>
+                    <td>{{ myItem.count }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <span class="text-center" ng-show="myItems.length == 0">
+            Your shopping cart is empty.
+        </span>
+        <div class="clearfix"></div>
+        <span class="pull-right alert alert-danger">Total Price: {{ checkOutTot | currency : "R" }}</span>
+        <button ng-click="removeBasket()" ng-show="myItems.length > 0" class="pull-left alert alert-danger">Empty your cart</button>
+        <!--<button href="#!Order" ng-click="checkoutButton()" ng-show="myItems.length > 0" class="center-block alert alert-danger">Checkout</button>-->
+        <!--<a href="#!Order" class="center-block alert alert-danger" ng-show="selectedItems.length > 0">Checkout</a>-->
+        <div class="text-left">
+            <a href="#!Payment" class="btn btn-primary center-block alert text-center text-danger" ng-show="myItems.length > 0">Checkout</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

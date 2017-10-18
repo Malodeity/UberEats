@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+ <html ng-app="UberWeb">
+<h2 class="text-center text-dark">Add Product</h2>
+
+<head>
+    <title>Add Product</title>
+    <meta charset="utf-8" />
+
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../services.js"></script>
+    <script src="../Demo.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div ng-controller="AddProductController">
+                <form>
+                    <div class="form-group">
+                        <label for="inputName">Product Name:</label>
+                        <input type="text" ng-model="ProdName" class="form-control input-lg" placeholder="Product Name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Product Desc:</label>
+                        <input type="text" ng-model="ProdDesc" class="form-control input-lg" placeholder="Product Description" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Price:</label>
+                        <input type="number" ng-model="ProdPrice" class="form-control input-lg" placeholder="Product Price" required />
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="inputName">Restaurant Name:</label>
+                        <input type="text" ng-model="ProdResName" class="form-control input-lg" placeholder="Restaurant Name" required />
+                    </div>-->
+                    <div class="form-group">
+                        <label for="inputName">Restaurant Name:</label>
+                        <input list="RestaurantName" ng-model="ProdResName" class="form-control input-lg" placeholder="Restaurant Name" required />
+                        <datalist id="RestaurantName">
+                            <select name="RestaurantName">
+                                <option value="KFC">KFC</option>
+                                <option value="Spur">Spur</option>
+                                <option value="Steers">Steers</option>
+                                <option value="Ocean Basket">Ocean Basket</option>
+                                <option value="Nandos">Nandos</option>
+                                <option value="Hungry Lion"> Hungry Lion</option>
+                                <option value="Mc Donalds">Mc Donalds</option>
+                                <option value="Chicken Licken"> Chicken Licken</option>
+                            </select>
+                        </datalist>
+                    </div>
+                    <br />
+                    <div class="input">
+                        <button ng-click="AddProdu()" class="btn btn-primary form-control input-lg">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

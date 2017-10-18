@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<h2 class="text-center text-dark">Payment</h2>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div ng-controller="PaymentController">
+                <form>
+                    
+                    <div class="form-group">
+                        <label for="inputName">Card Holder Name:</label>
+                        <input list="PayCardName" ng-model="PayCardName" class="form-control input-lg" placeholder="Card Holder Name" required />
+                    </div>
+                    <div class="form-group">
+        <label for="inputName">Card Number:</label>
+        <input type="text" ng-model="PayCardNum" class="form-control input-lg" placeholder="Card Number" required />
+    </div>
+
+                    <div class="form-group">
+                        <label for="inputName">Card Exp Date:</label>
+                        <input type="text" ng-model="PayExpDate" class="form-control input-lg" placeholder="MM/YY" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">CVC Code:</label>
+                        <input type="text" ng-model="PayCvCode" class="form-control input-lg" placeholder="000" required />
+                    </div>
+                    <br />
+                    <div class="input">
+                        <button ng-click="JustPay()" class="btn btn-primary form-control input-lg">Submit Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
